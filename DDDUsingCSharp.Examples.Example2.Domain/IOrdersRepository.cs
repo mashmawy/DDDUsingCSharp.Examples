@@ -2,6 +2,7 @@
 
 namespace DDDUsingCSharp.Examples.Example2.Domain
 {
+
     public interface IOrdersRepository
     {
         void AddOrder(Order order);

@@ -1,4 +1,8 @@
-﻿namespace DDDUsingCSharp.Examples.Example2.Domain
+﻿using System.Collections.Generic;
+using System.Reflection;
+using System.Xml.Linq;
+
+namespace DDDUsingCSharp.Examples.Example2.Domain
 {
     public abstract class Entity
     {
@@ -47,4 +51,5 @@
             return !(left == right);
         }
     }
+
 }

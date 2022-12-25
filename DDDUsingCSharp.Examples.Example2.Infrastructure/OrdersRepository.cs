@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace DDDUsingCSharp.Examples.Example2.Infrastructure
 {
-
-    public class OrdersRepository : IOrdersRepository
+    public class OrdersRepository  : IOrdersRepository
     {
         readonly OrderDbContext _dbContext;
         public OrdersRepository(OrderDbContext dbContext)
@@ -28,7 +27,8 @@ namespace DDDUsingCSharp.Examples.Example2.Infrastructure
         public void UpdateOrder(Order order)
         {
             var dbOrder = FindOrder(order.Id);
-            _dbContext.Entry(dbOrder).CurrentValues.SetValues(dbOrder);
+            ArgumentNullException.ThrowIfNull(dbOrder, nameof(order)); 
+            _dbContext.Entry(dbOrder).CurrentValues.SetValues(order);
         }
 
         public Order? FindOrder(int id)
