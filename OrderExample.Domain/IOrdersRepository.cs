@@ -9,6 +9,7 @@ namespace OrderExample.Domain
         void DeleteOrder(Order order);
         Order? FindOrder(int id);
         IEnumerable<Order> Search(Func<Order, bool> predecit);
-        void UpdateOrder(Order order);
+        void UpdateOrder(int id, object order);
+        Task SaveChanges();
     }
 }

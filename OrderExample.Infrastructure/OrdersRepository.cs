@@ -24,10 +24,10 @@ namespace OrderExample.Infrastructure
             _dbContext.Remove(order);
         }
 
-        public void UpdateOrder(Order order)
+        public void UpdateOrder(int id, object order)
         {
-            var dbOrder = FindOrder(order.Id);
-            ArgumentNullException.ThrowIfNull(dbOrder, nameof(order)); 
+            var dbOrder = FindOrder(id);
+            ArgumentNullException.ThrowIfNull(dbOrder, nameof(order));
             _dbContext.Entry(dbOrder).CurrentValues.SetValues(order);
         }
 
@@ -40,6 +40,9 @@ namespace OrderExample.Infrastructure
             return _dbContext.Orders.Where(predecit);
         }
 
-
+        public async Task SaveChanges()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

@@ -30,9 +30,14 @@
             _orderItems.Remove(orderItem);
         }
 
+
         public void UpdateShippingAddress(string country, string province, string city, string street, string building, string apartment)
         {
             ShippingAddress = new ShippingAddress(country, province, city, street, building, apartment);
+        }
+        public void UpdateShippingAddress(ShippingAddress shippingAddress)
+        {
+            ShippingAddress = shippingAddress;
         }
     }
 }
