@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.20" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrderExample.Application\OrderExample.Application.csproj" />
+    <ProjectReference Include="..\OrderExample.Domain\OrderExample.Domain.csproj" />
+    <ProjectReference Include="..\OrderExample.Infrastructure\OrderExample.Infrastructure.csproj" />
+    <ProjectReference Include="..\OrderExample.Services\OrderExample.Services.csproj" />
+  </ItemGroup>
+
+</Project>
